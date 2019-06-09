@@ -1,6 +1,6 @@
 package com.tw.igcc.exception;
 
-public class InvalidRomanNumberException extends Exception{
+public class InvalidRomanNumberException extends RuntimeException{
 	
 	private static final long serialVersionUID = -8107127015880303492L;
 
