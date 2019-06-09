@@ -1,11 +1,11 @@
 package com.tw.igcc.model;
 
-public class Metal {
+public class MetalCredit {
 	
 	private MetalType metalType;
 	private int credits;
 	
-	public Metal(MetalType metalType, int credit) {
+	public MetalCredit(MetalType metalType, int credit) {
 		this.metalType = metalType;
 		this.credits = credit;
 	}

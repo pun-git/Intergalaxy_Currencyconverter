@@ -1,12 +1,14 @@
 package com.tw.igcc.input.operation.impl;
 
-import com.tw.igcc.api.Operation;
-import com.tw.igcc.model.IntergalacticUnit;
+import java.util.Optional;
 
-public class QueryProcessingOperation implements Operation<IntergalacticUnit, String>{
+import com.tw.igcc.api.Operation;
+import com.tw.igcc.model.CommandArgs;
+
+public class QueryProcessingOperation implements Operation<String, CommandArgs>{
 	
 	@Override
-	public IntergalacticUnit process(String input) {
+	public Optional<String> process(CommandArgs commandArgs) {
 		return null;
 	}
 

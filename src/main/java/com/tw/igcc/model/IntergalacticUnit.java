@@ -5,7 +5,7 @@ public class IntergalacticUnit {
 	private String unitName;
 	private RomanNumber romanNumber;
 	
-	public void add(String unitName, RomanNumber romanNumber) {
+	public IntergalacticUnit(String unitName, RomanNumber romanNumber) {
 		this.unitName = unitName;
 		this.romanNumber = romanNumber;
 	}

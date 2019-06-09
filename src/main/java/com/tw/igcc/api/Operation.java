@@ -1,7 +1,9 @@
 package com.tw.igcc.api;
 
+import java.util.Optional;
+
 public interface Operation<R, I> {
 	
-	R process(I input);
+	Optional<R> process(I commandArgs);
 	
 }

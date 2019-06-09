@@ -8,6 +8,7 @@ import com.tw.igcc.rn.validation.rule.executor.RuleExecutor;
 public class RomanNumber {
 		
 	private long romanNumberInDigit;
+	private String romanNumberInSymbol;
 
 	private RomanNumber() {}
 	
@@ -15,6 +16,7 @@ public class RomanNumber {
 		
 		RomanNumber romanNumber = new RomanNumber();
 		romanNumber.validate(romanNumberInSymbol);
+		romanNumber.romanNumberInSymbol = romanNumberInSymbol;
 		romanNumber.romanNumberInDigit = RomanNumberUtil.convertRomanNumberToDecimal(romanNumberInSymbol);
 		return romanNumber;
 	}
@@ -26,6 +28,10 @@ public class RomanNumber {
 	
 	public long getRomanNumberInDigit() {
 		return romanNumberInDigit;
+	}
+	
+	public String getRomanNumberInSymbol() {
+		return romanNumberInSymbol;
 	}
 
 }
