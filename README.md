@@ -1,7 +1,30 @@
 
-Parking Lot System 
-
-Parking Lot System is command line application to support use cases of a multifloor parking lot.
+Merchant's Guide to the Galaxy
+ 
+You decided to give up on earth after the latest financial collapse left 99.99% of the earth's population with 0.01% of the wealth. Luckily, with the scant sum of money that is left in your account, you are able to afford to rent a spaceship, leave earth, and fly all over the galaxy to sell common metals and dirt (which apparently is worth a lot).
+ 
+Buying and selling over the galaxy requires you to convert numbers and units, and you decided to write a program to help you.
+ 
+The numbers used for intergalactic transactions follows similar convention to the roman numerals and you have painstakingly collected the appropriate translation between them.
+ 
+Roman numerals are based on seven symbols:
+ 
+ 
+Symbol	Value	   
+I	1	   
+V	5	   
+X	10	   
+L	50	   
+C	100	   
+D	500	   
+M	1,000	 
+ 
+Numbers are formed by combining symbols together and adding the values. For example, MMVI is 1000 + 1000 + 5 + 1 = 2006. Generally, symbols are placed in order of value, starting with the largest values. When smaller values precede larger values, the smaller values are subtracted from the larger values, and the result is added to the total. For example MCMXLIV = 1000 + (1000 ? 100) + (50 ? 10) + (5 ? 1) = 1944.
+ 
+·	The symbols "I", "X", "C", and "M" can be repeated three times in succession, but no more. (They may appear four times if the third and fourth are separated by a smaller value, such as XXXIX.) "D", "L", and "V" can never be repeated.
+·	"I" can be subtracted from "V" and "X" only. "X" can be subtracted from "L" and "C" only. "C" can be subtracted from "D" and "M" only. "V", "L", and "D" can never be subtracted.
+·	Only one small-value symbol may be subtracted from any large-value symbol.
+·	A number written in [16]Arabic numerals can be broken into digits. For example, 1903 is composed of 1, 9, 0, and 3. To write the Roman numeral, each of the non-zero digits should be treated separately. Inthe above example, 1,000 = M, 900 = CM, and 3 = III. Therefore, 1903 = MCMIII.
 
 Pre requisite 
 
@@ -9,7 +32,7 @@ Java sdk 1.7 must be installed and JAVA_HOME must be set
 Maven must be installed and mvn command path should be set in PATH enviornment variable.
 
 Note - 
-Application will work in unix but can also be made working in windows by updaing setup and parking_lot bat file for windows
+Application will work in unix but can also be made working in windows by updaing setup and Intergalaxy_Currencyconverter bat file for windows
 
 
 Install
@@ -18,39 +41,19 @@ parking_lot\bin\setup
 
 Execution
 To execute the application
-parking_lot\bin\parking_lot  <input file which has st of commands>
+Intergalaxy_Currencyconverter\bin\parking_lot  <input file which has st of commands>
 
-Input - Accepted input is a file.
+Input - Accepted input can be a file or interactive command line.
 
-Following funtionalities has been supported by commands
-
-1 To Build parking lot - 
-	create_parking_lot <number of parking slot>
-	
-2 To reserve parking slot 
-	park <registration number of vehicle> <color of vehicle>
-	
-3 To release parking slot
-	leave <parking slot number>
-
-4 To show status of parking slot at any point in time
-	status
-
-5 To show registration number of all the vehicles of a particular color
-	registration_numbers_for_cars_with_colour <colour>
-		
-6.To show parking slot of a vehicle with a registration number
-	slot_number_for_registration_number <registration number>
-
-7. To show slot number of cars with a particular regitration number
-	slot_numbers_for_cars_with_colour
-
-
-Note -
-Application can support multifloor parking system where as we can configure no of parking slot per floor, number of floors, entry and exits also stratgy to allocate parking slots can be configure while building the Parking Slots at run time.
+Input format - 
+1) <currency-name> is <roman number>
+example - glob is I
+2) <currency-name> <currency-name> <metal-name> is <credit-number> Credits
+example - glob glob Silver is 34 Credits
+3) how many Credits is <currency-name> <currency-name> <mertal-name> ?
+4) how much is <credit-name> <credit-name> <credit-name> ?   
 
 Assumption
-1) Designed it for multi floor parking system where no of parking slot will be given as input
-2) Entry and Exit Parking slot can also be used to park vehicle
-3) All type of vehicle consumed same size of parking slot
-4) Each floor will have same no of parking slots
+1) Focused on design implementation basically follow the input format strictly
+2) Metal has been considered as having fixed values which is already known
+3) Two type of queries been supported called how much and how many but open for extension
