@@ -1,0 +1,2 @@
+IGC_LOT_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+java -cp "$IGC_LOT_SCRIPT"/../target/Intergalaxy_Currencyconverter-1.0-SNAPSHOT.jar     com.tw.igcc.main.IntergalacticCurrencyConverter $1
