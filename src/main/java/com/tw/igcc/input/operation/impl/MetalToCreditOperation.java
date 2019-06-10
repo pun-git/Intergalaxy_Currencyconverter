@@ -6,15 +6,16 @@ import com.tw.igcc.api.Operation;
 import com.tw.igcc.model.CommandArgs;
 import com.tw.igcc.model.MetalCredit;
 import com.tw.igcc.model.MetalType;
+import com.tw.igcc.model.Result;
 import com.tw.igcc.model.RomanNumber;
 
-public class MetalToCreditOperation implements Operation<MetalCredit, CommandArgs>{
+public class MetalToCreditOperation implements Operation<Result, CommandArgs>{
 	
 	@Override
-	public Optional<MetalCredit> process(CommandArgs commandArgs) {
+	public Optional<Result> process(CommandArgs commandArgs) {
 		validate(commandArgs.getInput());
 		RomanNumber romanNumber = createRomanNumber(commandArgs.getInput(), commandArgs);
-		return Optional.of(new MetalCredit(MetalType.valueOf(commandArgs.getInput().trim().split("\\s+")[2]), (float)(Float.valueOf(commandArgs.getInput().trim().split("\\s+")[4]) / (float)romanNumber.getRomanNumberInDigit())));
+		return Optional.of(new Result(new MetalCredit(MetalType.valueOf(commandArgs.getInput().trim().split("\\s+")[2]), (float)(Float.valueOf(commandArgs.getInput().trim().split("\\s+")[4]) / (float)romanNumber.getRomanNumberInDigit()))));
 	}
 	
 	private void validate(String input) {

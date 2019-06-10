@@ -6,12 +6,13 @@ import com.tw.igcc.api.Operation;
 import com.tw.igcc.exception.InvalidRomanNumberException;
 import com.tw.igcc.model.CommandArgs;
 import com.tw.igcc.model.IntergalacticUnit;
+import com.tw.igcc.model.Result;
 import com.tw.igcc.model.RomanNumber;
 
-public class IgcToRnOperation implements Operation<IntergalacticUnit, CommandArgs>{
+public class IgcToRnOperation implements Operation<Result, CommandArgs>{
 	
 	@Override
-	public Optional<IntergalacticUnit> process(CommandArgs commandArgs) {
+	public Optional<Result> process(CommandArgs commandArgs) {
 		validate(commandArgs.getInput());
 		return getIGcUnit(commandArgs.getInput());
 	}
@@ -22,9 +23,9 @@ public class IgcToRnOperation implements Operation<IntergalacticUnit, CommandArg
 		}
 	}
 	
-	public Optional<IntergalacticUnit> getIGcUnit(String input) throws InvalidRomanNumberException{
+	public Optional<Result> getIGcUnit(String input) throws InvalidRomanNumberException{
 		String[] inputs = input.split("\\s+");
-		return Optional.of(new IntergalacticUnit(inputs[0], RomanNumber.create(inputs[2])));
+		return Optional.of(new Result(new IntergalacticUnit(inputs[0], RomanNumber.create(inputs[2]))));
 	}
 
 }

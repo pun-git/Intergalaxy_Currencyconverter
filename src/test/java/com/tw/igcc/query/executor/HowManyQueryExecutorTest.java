@@ -33,6 +33,23 @@ public class HowManyQueryExecutorTest {
 		buildGalacticUnitVsRomanNumberMap();
 		buildMetalTypeVsMetalCredit();
 	}
+	@Test(expected = IllegalArgumentException.class)
+	public void test_HowMany_NullQuery() {
+		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, null);
+		howManyQueryExecutor.execute(commandArgs);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void test_HowMany_BlankQuery() {
+		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "");
+		howManyQueryExecutor.execute(commandArgs);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void test_HowMany_InvalidQuery() {
+		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "?");
+		howManyQueryExecutor.execute(commandArgs);
+	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void test_HowMany_GritProkSilver() {
@@ -88,8 +105,8 @@ public class HowManyQueryExecutorTest {
 	}
 	
 	private void buildMetalTypeVsMetalCredit() {
-		metalTypeVsMetalCredit.put(MetalType.Gold, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "glob prok Gold is 57800 Credits")).get());
-		metalTypeVsMetalCredit.put(MetalType.Silver, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "glob glob Silver is 34 Credits")).get());
-		metalTypeVsMetalCredit.put(MetalType.Iron, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "pish pish Iron is 3910 Credits")).get());
+		metalTypeVsMetalCredit.put(MetalType.Gold, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "glob prok Gold is 57800 Credits")).get().getMetalCredit());
+		metalTypeVsMetalCredit.put(MetalType.Silver, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "glob glob Silver is 34 Credits")).get().getMetalCredit());
+		metalTypeVsMetalCredit.put(MetalType.Iron, new MetalToCreditOperation().process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "pish pish Iron is 3910 Credits")).get().getMetalCredit());
 	}
 }

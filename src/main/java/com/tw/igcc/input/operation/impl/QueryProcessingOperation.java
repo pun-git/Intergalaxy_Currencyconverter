@@ -4,15 +4,17 @@ import java.util.Optional;
 
 import com.tw.igcc.api.Operation;
 import com.tw.igcc.model.CommandArgs;
+import com.tw.igcc.model.Result;
 import com.tw.igcc.query.executor.api.QueryExecutor;
 import com.tw.igcc.query.executor.factory.QueryExecutorFactory;
 
-public class QueryProcessingOperation implements Operation<String, CommandArgs>{
+public class QueryProcessingOperation implements Operation<Result, CommandArgs>{
 	
 	@Override
-	public Optional<String> process(CommandArgs commandArgs) {
+	public Optional<Result> process(CommandArgs commandArgs) {
 		QueryExecutor queryExecutor = getQueryExecutor(commandArgs);
-		return queryExecutor.execute(commandArgs);
+		String result = queryExecutor.execute(commandArgs).get();
+		return Optional.of(new Result(result));
 	}
 	
 	private QueryExecutor getQueryExecutor(CommandArgs commandArgs) {

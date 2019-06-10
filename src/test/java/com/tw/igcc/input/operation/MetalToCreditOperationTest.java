@@ -16,6 +16,7 @@ import com.tw.igcc.model.CommandArgs;
 import com.tw.igcc.model.IntergalacticUnit;
 import com.tw.igcc.model.MetalCredit;
 import com.tw.igcc.model.MetalType;
+import com.tw.igcc.model.Result;
 import com.tw.igcc.model.RomanNumber;
 
 public class MetalToCreditOperationTest {
@@ -32,35 +33,35 @@ public class MetalToCreditOperationTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testMetalWith_GlobGlobUnkownTotal3910Credit() {
-		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "pish pish Unkown is 3910 Credits");
+		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "pish pish Unkown is 3910 Credits");
 		metalToCreditOperation.process(commandArgs);
 	}
 	
 	@Test
 	public void testMetalWith_GlobGlobSilverTotal37Credit() {
-		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "glob glob Silver is 39 Credits");
-		Optional<MetalCredit> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
+		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "glob glob Silver is 39 Credits");
+		Optional<Result> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
 		assertTrue(optionalMetalCredit.isPresent());
-		assertEquals(optionalMetalCredit.get().getMetalType(), MetalType.Silver);
-		assertEquals(optionalMetalCredit.get().getCredits(), 37);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getMetalType(), MetalType.Silver);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getCredits(), 19.5, 0);
 	}
 	
 	@Test
 	public void testMetalWith_GlobProkGoldTotal57800Credit() {
-		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "glob prok Gold is 57800 Credits");
-		Optional<MetalCredit> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
+		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "glob prok Gold is 57800 Credits");
+		Optional<Result> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
 		assertTrue(optionalMetalCredit.isPresent());
-		assertEquals(optionalMetalCredit.get().getMetalType(), MetalType.Gold);
-		assertEquals(optionalMetalCredit.get().getCredits(), 57796);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getMetalType(), MetalType.Gold);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getCredits(), 14450.0, 0);
 	}
 	
 	@Test
 	public void testMetalWith_GlobGlobIronTotal3910Credit() {
-		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<>(), igUnitNameVsIgUnit, "pish pish Iron is 3910 Credits");
-		Optional<MetalCredit> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
+		CommandArgs commandArgs = new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "pish pish Iron is 3910 Credits");
+		Optional<Result> optionalMetalCredit =metalToCreditOperation.process(commandArgs);
 		assertTrue(optionalMetalCredit.isPresent());
-		assertEquals(optionalMetalCredit.get().getMetalType(), MetalType.Iron);
-		assertEquals(optionalMetalCredit.get().getCredits(), 3890);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getMetalType(), MetalType.Iron);
+		assertEquals(optionalMetalCredit.get().getMetalCredit().getCredits(), 195.5, 0);
 	}
 	
 	@After

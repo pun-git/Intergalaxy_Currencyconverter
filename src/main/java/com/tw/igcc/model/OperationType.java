@@ -2,7 +2,7 @@ package com.tw.igcc.model;
 
 public enum OperationType {
 
-		IGCVsRN("[VIXLCDM]+"),
+		IGCVsRN(".*[VIXLCDM]+.*"),
 		IGCWITHMETALVsCREDIT("Credits"),
 		QUERY("?");
 		
