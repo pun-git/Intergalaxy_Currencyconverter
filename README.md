@@ -41,9 +41,18 @@ Intergalaxy_Currencyconverter\bin\setup
 
 Execution
 To execute the application
-Intergalaxy_Currencyconverter\bin\parking_lot  <input file which has st of commands>
+
+To execute command in file
+Intergalaxy_Currencyconverter\bin\Intergalaxy_Currencyconverter  <input file which has set of commands>
+
+To execute command throught interactive command line
+Intergalaxy_Currencyconverter\bin\Intergalaxy_Currencyconverter  <input file which has st of commands>
 
 Input - Accepted input can be a file or interactive command line.
+System consider the test data file if been provided as an command line argument or give interactive command line to provide the input to user.
+Test Data
+/Intergalaxy_Currencyconverter/input 
+
 
 Input format - 
 1) <currency-name> is <roman number>
