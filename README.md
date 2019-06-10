@@ -28,7 +28,7 @@ Numbers are formed by combining symbols together and adding the values. For exam
 
 Pre requisite 
 
-Java sdk 1.7 must be installed and JAVA_HOME must be set
+Java sdk 1.8 must be installed and JAVA_HOME must be set
 Maven must be installed and mvn command path should be set in PATH enviornment variable.
 
 Note - 
@@ -37,7 +37,7 @@ Application will work in unix but can also be made working in windows by updaing
 
 Install
 To build the executable jar file
-parking_lot\bin\setup
+Intergalaxy_Currencyconverter\bin\setup
 
 Execution
 To execute the application
