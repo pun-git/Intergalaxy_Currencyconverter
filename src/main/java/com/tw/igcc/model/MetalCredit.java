@@ -3,9 +3,9 @@ package com.tw.igcc.model;
 public class MetalCredit {
 	
 	private MetalType metalType;
-	private int credits;
+	private float credits;
 	
-	public MetalCredit(MetalType metalType, int credit) {
+	public MetalCredit(MetalType metalType, float credit) {
 		this.metalType = metalType;
 		this.credits = credit;
 	}
@@ -14,7 +14,7 @@ public class MetalCredit {
 		return metalType;
 	}
 	
-	public int getCredits() {
+	public float getCredits() {
 		return credits;
 	}
 

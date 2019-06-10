@@ -14,7 +14,7 @@ public class MetalToCreditOperation implements Operation<MetalCredit, CommandArg
 	public Optional<MetalCredit> process(CommandArgs commandArgs) {
 		validate(commandArgs.getInput());
 		RomanNumber romanNumber = createRomanNumber(commandArgs.getInput(), commandArgs);
-		return Optional.of(new MetalCredit(MetalType.valueOf(commandArgs.getInput().trim().split("\\s+")[2]), (Integer.valueOf(commandArgs.getInput().trim().split("\\s+")[4]) - (int)romanNumber.getRomanNumberInDigit())));
+		return Optional.of(new MetalCredit(MetalType.valueOf(commandArgs.getInput().trim().split("\\s+")[2]), (float)(Float.valueOf(commandArgs.getInput().trim().split("\\s+")[4]) / (float)romanNumber.getRomanNumberInDigit())));
 	}
 	
 	private void validate(String input) {

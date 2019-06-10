@@ -14,7 +14,7 @@ public abstract class BaseRSValidationRule implements Rule<String>{
 		}
 		for(String pattern : getInvalidPattern()) {
 			if(Pattern.matches(pattern, romanNumber)) {
-				throw new InvalidRomanNumberException("Invalid Roman Number");
+				throw new InvalidRomanNumberException("Invalid Roman Number "+romanNumber+" for pattern - "+pattern);
 			}
 		}
 	}

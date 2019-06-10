@@ -1,7 +1,7 @@
 package com.tw.igcc.query.executor.factory;
 
-import com.tw.igcc.query.executor.HowMuchQueryExecutorImpl;
 import com.tw.igcc.query.executor.api.QueryExecutor;
+import com.tw.igcc.query.executor.impl.HowMuchQueryExecutorImpl;
 
 public class QueryExecutorFactory {
 

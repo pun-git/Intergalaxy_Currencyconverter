@@ -1,7 +1,11 @@
 package com.tw.igcc.query.executor.api;
 
+import java.util.Optional;
+
+import com.tw.igcc.model.CommandArgs;
+
 public interface QueryExecutor{
 
-	public String execute(String query);
+	public Optional<String> execute(CommandArgs commandArgs);
 	
 }
