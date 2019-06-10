@@ -17,13 +17,13 @@ public class IgcToRnOperation implements Operation<Result, CommandArgs>{
 		return getIGcUnit(commandArgs.getInput());
 	}
 	
-	public void validate(String input) throws InvalidRomanNumberException{
+	private void validate(String input) throws InvalidRomanNumberException{
 		if(input == null || input.isEmpty() || input.trim().split("\\s+").length < 3) {
 			throw new UnsupportedOperationException("I have no idea what you are talking about");
 		}
 	}
 	
-	public Optional<Result> getIGcUnit(String input) throws InvalidRomanNumberException{
+	private Optional<Result> getIGcUnit(String input) throws InvalidRomanNumberException{
 		String[] inputs = input.split("\\s+");
 		return Optional.of(new Result(new IntergalacticUnit(inputs[0], RomanNumber.create(inputs[2]))));
 	}

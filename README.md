@@ -10,7 +10,7 @@ The numbers used for intergalactic transactions follows similar convention to th
 Roman numerals are based on seven symbols:
  
  
-Symbol	Value	   
+Symbol	Value	  
 I	1	   
 V	5	   
 X	10	   
@@ -66,3 +66,9 @@ Assumption
 1) Focused on design implementation basically follow the input format strictly
 2) Metal has been considered as having fixed values which is already known
 3) Two type of queries been supported called how much and how many but open for extension
+
+Extensibility -
+1) To support new metal type can be added as an ENUM constant in MetalType
+2) New currency will automatically be supported when it encounters in input so no change is required
+3) To support a different kind of query can be implemented QueryExecutor and also need to update the QueryFactory
+4) If need to update format for query only corresponding query implementation need to be updated
