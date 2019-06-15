@@ -45,7 +45,7 @@ public class HowManyQueryExecutorTest {
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = UnsupportedOperationException.class)
 	public void test_HowMany_InvalidQuery() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "?");
 		howManyQueryExecutor.execute(commandArgs);
@@ -63,7 +63,7 @@ public class HowManyQueryExecutorTest {
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = UnsupportedOperationException.class)
 	public void test_HowMany_NoCurrency() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is Wood ?");
 		howManyQueryExecutor.execute(commandArgs);
