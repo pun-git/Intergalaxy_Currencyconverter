@@ -34,43 +34,43 @@ public class HowManyQueryExecutorTest {
 		buildMetalTypeVsMetalCredit();
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void test_HowMany_NullQuery() {
+	public void testHowManyNullQuery() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, null);
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_HowMany_BlankQuery() {
+	public void testHowManyBlankQuery() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "");
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_HowMany_InvalidQuery() {
+	public void testHowManyInvalidQuery() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "?");
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_HowMany_GritProkSilver() {
+	public void testHowManyGritProkSilver() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is grit prok Silver ?");
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_HowMany_GlobProkWood() {
+	public void testHowManyGlobProkWood() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is glob prok Wood ?");
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_HowMany_NoCurrency() {
+	public void testHowManyNoCurrency() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is Wood ?");
 		howManyQueryExecutor.execute(commandArgs);
 	}
 	
 	@Test
-	public void test_HowMany_GlobProkSilver() {
+	public void testHowManyGlobProkSilver() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is glob prok Silver ?");
 		Optional<String> result = howManyQueryExecutor.execute(commandArgs);
 		assertTrue(result.isPresent());
@@ -78,7 +78,7 @@ public class HowManyQueryExecutorTest {
 	}
 	
 	@Test
-	public void test_HowMany_GlobProkGold() {
+	public void testHowManyGlobProkGold() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is glob prok Gold ?");
 		Optional<String> result = howManyQueryExecutor.execute(commandArgs);
 		assertTrue(result.isPresent());
@@ -86,7 +86,7 @@ public class HowManyQueryExecutorTest {
 	}
 	
 	@Test
-	public void test_HowMany_GlobProkIron() {
+	public void testHowManyGlobProkIron() {
 		CommandArgs commandArgs = new CommandArgs(metalTypeVsMetalCredit, igUnitNameVsIgUnit, "how many Credits is glob prok Iron ?");
 		Optional<String> result = howManyQueryExecutor.execute(commandArgs);
 		assertTrue(result.isPresent());

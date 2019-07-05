@@ -17,37 +17,37 @@ public class RSXValidationRuleTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive5Xs() {
+	public void testValidatorRuleSucessesive5Xs() {
 		rsxValidationRule.execute("MCXXXXXLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive4Xs() {
+	public void testValidatorRuleSucessesive4Xs() {
 		rsxValidationRule.execute("MCXXXXLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByD() {
+	public void testValidatorRuleSubtractedByD() {
 		rsxValidationRule.execute("MCXXXDXLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByM() {
+	public void testValidatorRuleSubtractedByM() {
 		rsxValidationRule.execute("MCXXXMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_SubtractedByL() {
+	public void testValidatorRuleSubtractedByL() {
 		rsxValidationRule.execute("MCXXXLXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_SubtractedByC() {
+	public void testValidatorRuleSubtractedByC() {
 		rsxValidationRule.execute("MCXXXCXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_validaNumber() {
+	public void testValidatorRulevalidaNumber() {
 		rsxValidationRule.execute("MCMXLIV");
 	}
 	

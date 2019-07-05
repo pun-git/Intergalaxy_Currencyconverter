@@ -17,32 +17,32 @@ public class RSLValidationRuleTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive2Ls() {
+	public void testValidatorRuleSucessesive2Ls() {
 		rslValidationRule.execute("MCMXLLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByC() {
+	public void testValidatorRuleSubtractedByC() {
 		rslValidationRule.execute("MCMXLCIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByD() {
+	public void testValidatorRuleSubtractedByD() {
 		rslValidationRule.execute("MCMXLDIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByM() {
+	public void testValidatorRuleSubtractedByM() {
 		rslValidationRule.execute("MCMXLMIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Valid() {
+	public void testValidatorRuleValid() {
 		rslValidationRule.execute("MCMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_ValidWithCDM() {
+	public void testValidatorRuleValidWithCDM() {
 		rslValidationRule.execute("MCMXMDCLIV");
 	}
 	

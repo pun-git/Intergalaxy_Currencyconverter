@@ -17,17 +17,17 @@ public class RSDValidationRuleTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive2Ds() {
+	public void testValidatorRuleSucessesive2Ds() {
 		rsdValidationRule.execute("MCMDDLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByM() {
+	public void testValidatorRuleSubtractedByM() {
 		rsdValidationRule.execute("MCMDMLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Valid() {
+	public void testValidatorRuleValid() {
 		rsdValidationRule.execute("MCMDXLIV");
 	}
 	

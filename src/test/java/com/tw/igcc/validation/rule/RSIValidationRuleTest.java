@@ -17,36 +17,36 @@ public class RSIValidationRuleTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive4Is() {
+	public void testValidatorRuleSucessesive4Is() {
 		rsiValidator.execute("VIIIIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByM() {
+	public void testValidatorRuleSubtractedByM() {
 		rsiValidator.execute("VIMV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByD() {
+	public void testValidatorRuleSubtractedByD() {
 		rsiValidator.execute("VIDV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByC() {
+	public void testValidatorRuleSubtractedByC() {
 		rsiValidator.execute("VICV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_SubtractedByL() {
+	public void testValidatorRuleSubtractedByL() {
 		rsiValidator.execute("VILV");
 	}
 	
 	@Test
-	public void testValidatorRule_SubtractedByV() {
+	public void testValidatorRuleSubtractedByV() {
 		rsiValidator.execute("VIVV");
 	}
 	@Test
-	public void testValidatorRule_SubtractedByX() {
+	public void testValidatorRuleSubtractedByX() {
 		rsiValidator.execute("VIXV");
 	}
 	

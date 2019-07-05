@@ -31,22 +31,22 @@ public class HowMuchQueryExecutorTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_NullHowMuchQuery() {
+	public void testNullHowMuchQuery() {
 		howQueryExecutorImpl.execute(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, null));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_BlankHowMuchQuery() {
+	public void testBlankHowMuchQuery() {
 		howQueryExecutorImpl.execute(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, ""));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void test_InvalidHowMuchQuery() {
+	public void testInvalidHowMuchQuery() {
 		howQueryExecutorImpl.execute(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "how much wood could a woodchuck chuck if a woodchuck could chuck wood ?"));
 	}
 	
 	@Test
-	public void test_pishtegjglobglob() {
+	public void testpishtegjglobglob() {
 		Optional<String> howMuchResultOptional = howQueryExecutorImpl.execute(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), igUnitNameVsIgUnit, "how much is pish tegj glob glob ?"));
 		assertTrue(howMuchResultOptional.isPresent());
 		assertEquals("pish tegj glob glob is 42", howMuchResultOptional.get());

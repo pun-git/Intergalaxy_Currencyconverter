@@ -20,17 +20,17 @@ public class QueryExecutorFactoryTest {
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_UnknownProcessor() {
+	public void testUnknownProcessor() {
 		assertTrue(queryExecutorFactory.getQueryFactory(" is pish tegj glob glob ?") instanceof HowMuchQueryExecutorImpl);
 	}
 	
 	@Test
-	public void test_HowMuchFactoryProcessor() {
+	public void testHowMuchFactoryProcessor() {
 		assertTrue(queryExecutorFactory.getQueryFactory("how much is pish tegj glob glob ?") instanceof HowMuchQueryExecutorImpl);
 	}
 	
 	@Test
-	public void test_HowManyFactoryProcessor() {
+	public void testHowManyFactoryProcessor() {
 		assertTrue(queryExecutorFactory.getQueryFactory("how many Credits is glob prok Silver ?") instanceof HowManyQueryExecutorImpl);
 	}
 	

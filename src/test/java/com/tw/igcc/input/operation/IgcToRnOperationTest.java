@@ -28,32 +28,32 @@ public class IgcToRnOperationTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void test_CreationOfInvalidIGCForInvalidRomanNumber() {
+	public void testCreationOfInvalidIGCForInvalidRomanNumber() {
 		igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "tegj is Q"));
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_CreationOfInvalidIGCForBlank() {
+	public void testCreationOfInvalidIGCForBlank() {
 		igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), ""));
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_CreationOfInvalidIGCForNull() {
+	public void testCreationOfInvalidIGCForNull() {
 		igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), null));
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_CreationOfInvalidIGCForNoRN() {
+	public void testCreationOfInvalidIGCForNoRN() {
 		igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "glob is "));
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void test_CreationOfInvalidIGCForNoIGC() {
+	public void testCreationOfInvalidIGCForNoIGC() {
 		igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), " is I"));
 	}
 	
 	@Test
-	public void test_CreationOfValidIGCForglob() {
+	public void testCreationOfValidIGCForglob() {
 		Optional<Result> intergalacticUnitOptional = igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "glob is I"));
 		assertTrue(intergalacticUnitOptional.isPresent());
 		assertEquals("glob", intergalacticUnitOptional.get().getIntergalacticUnit().getUnitName());
@@ -61,7 +61,7 @@ public class IgcToRnOperationTest {
 	}
 	
 	@Test
-	public void test_CreationOfValidIGCForprok() {
+	public void testCreationOfValidIGCForprok() {
 		Optional<Result> intergalacticUnitOptional = igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "prok is V"));
 		assertTrue(intergalacticUnitOptional.isPresent());
 		assertEquals("prok", intergalacticUnitOptional.get().getIntergalacticUnit().getUnitName());
@@ -69,7 +69,7 @@ public class IgcToRnOperationTest {
 	}
 	
 	@Test
-	public void test_CreationOfValidIGCForpish() {
+	public void testCreationOfValidIGCForpish() {
 		Optional<Result> intergalacticUnitOptional = igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "pish is X"));
 		assertTrue(intergalacticUnitOptional.isPresent());
 		assertEquals("pish", intergalacticUnitOptional.get().getIntergalacticUnit().getUnitName());
@@ -77,7 +77,7 @@ public class IgcToRnOperationTest {
 	}
 	
 	@Test
-	public void test_CreationOfValidIGCFortegj() {
+	public void testCreationOfValidIGCFortegj() {
 		Optional<Result> intergalacticUnitOptional = igcToRnOperation.process(new CommandArgs(new ConcurrentHashMap<MetalType, MetalCredit>(), new ConcurrentHashMap<String, IntergalacticUnit>(), "tegj is L"));
 		assertTrue(intergalacticUnitOptional.isPresent());
 		assertEquals("tegj", intergalacticUnitOptional.get().getIntergalacticUnit().getUnitName());

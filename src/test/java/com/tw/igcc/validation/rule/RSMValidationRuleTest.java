@@ -17,52 +17,52 @@ public class RSMValidationRuleTest {
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive5Ms() {
+	public void testValidatorRuleSucessesive5Ms() {
 		rsmValidationRule.execute("MCMMMMMXLIV");
 	}
 	
 	@Test(expected = InvalidRomanNumberException.class)
-	public void testValidatorRule_Sucessesive4Ms() {
+	public void testValidatorRuleSucessesive4Ms() {
 		rsmValidationRule.execute("MCMMMMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Valid() {
+	public void testValidatorRuleValid() {
 		rsmValidationRule.execute("MCMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_ValidWithCDM() {
+	public void testValidatorRuleValidWithCDM() {
 		rsmValidationRule.execute("MCMXLIV");
 	}
 		
 	@Test
-	public void testValidatorRule_Sucessesive4MsI() {
+	public void testValidatorRuleSucessesive4MsI() {
 		rsmValidationRule.execute("MCMMMIMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Sucessesive4MsV() {
+	public void testValidatorRuleSucessesive4MsV() {
 		rsmValidationRule.execute("MCMMMVMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Sucessesive4MsX() {
+	public void testValidatorRuleSucessesive4MsX() {
 		rsmValidationRule.execute("MCMMMXMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Sucessesive4MsL() {
+	public void testValidatorRuleSucessesive4MsL() {
 		rsmValidationRule.execute("MCMMMLMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Sucessesive4MsC() {
+	public void testValidatorRuleSucessesive4MsC() {
 		rsmValidationRule.execute("MCMMMCMXLIV");
 	}
 	
 	@Test
-	public void testValidatorRule_Sucessesive4MsD() {
+	public void testValidatorRuleSucessesive4MsD() {
 		rsmValidationRule.execute("MCMMMDMXLIV");
 	}
 	
